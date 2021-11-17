@@ -34,6 +34,28 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        />
+        >
+        <Button
+            android:id="@+id/button_1"
+            android:layout_width="30pt"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="b1"
+            />
+        <Button
+            android:id="@+id/button_2"
+            android:layout_width="30pt"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="b2"
+            />
+        <Button
+            android:id="@+id/button_3"
+            android:layout_width="30pt"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="b3"
+            />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
