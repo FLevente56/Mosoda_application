@@ -6,7 +6,7 @@
     android:id="@+id/bejelntekezes_panel"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -14,31 +14,32 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@id/back_login_button"
+        android:gravity="center"
         android:theme="@style/Theme.AppCompat"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Felhasznalonev"
+            android:hint="Felhasznalonev"
             android:layout_gravity="top"
-
             />
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password"
+            android:hint="Password"
             android:layout_gravity="bottom"
-            android:layout_marginTop="55dp"
-            android:layout_marginBottom="55dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             />
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password"
+            android:hint="Password2"
             android:layout_gravity="bottom"
-            android:layout_marginTop="55dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
             />
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/back_login_button"
