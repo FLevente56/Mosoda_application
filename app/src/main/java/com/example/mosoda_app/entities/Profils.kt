@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Profils(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey(autoGenerate = false)
     val id: Int,
     val userName: String,
     val password: String

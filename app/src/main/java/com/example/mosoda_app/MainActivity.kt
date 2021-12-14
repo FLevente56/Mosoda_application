@@ -14,12 +14,14 @@ class MainActivity : AppCompatActivity() {
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_layout)
+        //adatbazis
+        val dao = Database.getInstance(this).dao
         val bottnav: BottomNavigationView = findViewById(R.id.bottom_navigation_view_login);
         bottnav.setOnItemSelectedListener() {
             when(it.itemId) {
                 //TODO: fragmentek megval
                 R.id.back_login_button -> { // Ez nem tudom meg mit csinaljon valszeg lepjen ki az App-bol
-                    replaceFragment()
+                    //replaceFragment()
                     return@setOnItemSelectedListener true
                 }
                 //TODO: fragmentek megval
@@ -29,14 +31,14 @@ class MainActivity : AppCompatActivity() {
                     // sikeres=attempt_login(); //-vlm ilyesmi
                     if(sikeres)
                     {
-                        replaceFragment()
+                        //replaceFragment()
                         return@setOnItemSelectedListener true
                     }
                 }
                 //TODO: fragmentek megval
                 R.id.to_registrate_button -> { /*TODO : atkuld a registration_layoutra es ott hasonloan fog viselkedni registrate()-fugv felvesz az adatbazisba
                                                  ha sikeres akkor pedig visszakuld erre a kepernyore h jelentkezz be */
-                    replaceFragment()
+                    //replaceFragment()
                     return@setOnItemSelectedListener true
                 }
             }
@@ -47,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         if (fragment != null) {
             val transaction = supportFragmentManager.beginTransaction()
             //TODO: fragment struktura
-            transaction.replace(R.id., fragment)
+            //transaction.replace(R.id, fragment)
             transaction.commit()
         }
     }
@@ -56,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         if (fragment != null) {
             val childTransaction = supportFragmentManager.beginTransaction()
             //TODO: fragment struktura -ez nem 100% fog kelleni, meglatom meg
-            childTransaction.replace(R.id., fragment)
+            //childTransaction.replace(R.id., fragment)
             childTransaction.commit()
         }
     }

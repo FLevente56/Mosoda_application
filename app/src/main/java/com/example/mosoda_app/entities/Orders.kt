@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Orders(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey(autoGenerate = false)
     val id: Int,
     val pickUpDate: String,
     val deliveryDate: String,
