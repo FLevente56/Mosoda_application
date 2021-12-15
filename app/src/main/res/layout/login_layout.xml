@@ -17,6 +17,7 @@
         android:theme="@style/Theme.AppCompat"
         >
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Felhasznalonev"
@@ -24,10 +25,12 @@
 
             />
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Password"
             android:layout_gravity="bottom"
+            android:inputType="textPassword"
             />
     </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView

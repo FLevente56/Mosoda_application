@@ -1,6 +1,8 @@
 package com.example.mosoda_app
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
@@ -14,6 +16,10 @@ class MainActivity : AppCompatActivity() {
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_layout)
+        var username = findViewById<EditText>(R.id.username)
+        var password = findViewById<EditText>(R.id.password)
+        var button_login = findViewById<Button>(R.id.attempt_login_button)
+
         //adatbazis
         val dao = Database.getInstance(this).dao
         val bottnav: BottomNavigationView = findViewById(R.id.bottom_navigation_view_login);
@@ -44,12 +50,19 @@ class MainActivity : AppCompatActivity() {
             }
             false
         }
+
+        button_login.setOnClickListener{
+            val userName = username.text
+            val passWord = password.text
+
+            //itt ellenorozni hogy helyes-e a felhasznalo
+        }
     }
     private fun replaceFragment(fragment: Fragment) {
         if (fragment != null) {
             val transaction = supportFragmentManager.beginTransaction()
             //TODO: fragment struktura
-            //transaction.replace(R.id, fragment)
+            //transaction.replace(R.id., fragment)
             transaction.commit()
         }
     }
