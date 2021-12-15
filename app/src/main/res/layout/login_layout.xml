@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:hint="Felhasznalonev"
             android:layout_gravity="top"
+            android:inputType="text"
 
             />
         <com.google.android.material.textfield.TextInputEditText

@@ -3,12 +3,14 @@ package com.example.mosoda_app
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
-import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -52,10 +54,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         button_login.setOnClickListener{
-            val userName = username.text
-            val passWord = password.text
-
+            val userName = username.text.toString()
+            val passWord = password.text.toString()
             //itt ellenorozni hogy helyes-e a felhasznalo
+            lifecycleScope.launch{
+                val profil = dao.getProfile(userName, passWord)
+                if(profil.isEmpty()) {
+                    //de kell irni a hibauzenetet, hogy nem sikerult a bejelentezes
+                    Toast.makeText(this@MainActivity, "Wrong username or password", Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    //TODO: engedjen be az alkalmazasba
+                }
+            }
+
         }
     }
     private fun replaceFragment(fragment: Fragment) {
