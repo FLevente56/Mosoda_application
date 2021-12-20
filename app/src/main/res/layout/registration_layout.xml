@@ -18,26 +18,31 @@
         android:theme="@style/Theme.AppCompat"
         >
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Felhasznalonev"
             android:layout_gravity="top"
             />
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reg_password1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Password"
             android:layout_gravity="bottom"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
+            android:inputType="textPassword"
             />
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reg_password2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Password2"
+            android:hint="Repeat password"
             android:layout_gravity="bottom"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
+            android:inputType="textPassword"
             />
     </LinearLayout>
 

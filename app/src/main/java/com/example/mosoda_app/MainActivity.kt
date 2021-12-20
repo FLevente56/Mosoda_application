@@ -1,5 +1,6 @@
 package com.example.mosoda_app
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -8,9 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         var username = findViewById<EditText>(R.id.username)
         var password = findViewById<EditText>(R.id.password)
         var button_login = findViewById<Button>(R.id.attempt_login_button)
+        var button_sign_up = findViewById<Button>(R.id.to_registrate_button)
 
         //adatbazis
         val dao = Database.getInstance(this).dao
@@ -68,6 +68,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+        }
+
+        button_sign_up.setOnClickListener{
+            val intent = Intent(this, RegistrationActivity::class.java)
+            startActivity(intent)
         }
     }
     private fun replaceFragment(fragment: Fragment) {
