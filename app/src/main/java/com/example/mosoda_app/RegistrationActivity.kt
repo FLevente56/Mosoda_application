@@ -27,18 +27,22 @@ class RegistrationActivity : AppCompatActivity() {
             val passw1 = password1.text.toString()
             val passw2 = password2.text.toString()
             val username = userName.text.toString()
-            if(passw1 != passw2)
-            {
-                Toast.makeText(this, "The two passwords do not match", Toast.LENGTH_SHORT).show()
+            if(username.isEmpty() || passw1.isEmpty() || passw2.isEmpty()) {
+                Toast.makeText(this, "Field must be fill!", Toast.LENGTH_SHORT).show()
             }
-            else
-            {
-                val newProfil = Profils(id=0, userName = username, password = passw1)
-                lifecycleScope.launch{
-                    dao.insertProfile(newProfil)
-                    //TODO: engedjen be az alkalmazasba
-                    val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
-                    startActivity(intent)
+            else {
+                if (passw1 != passw2) {
+                    Toast.makeText(this, "The two passwords do not match", Toast.LENGTH_SHORT)
+                        .show()
+                } else {
+                    val newProfil = Profils(id = 0, userName = username,
+                        password = passw1)
+                    lifecycleScope.launch {
+                        dao.insertProfile(newProfil)
+                        //TODO: engedjen be az alkalmazasba
+                        val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             }
         }
