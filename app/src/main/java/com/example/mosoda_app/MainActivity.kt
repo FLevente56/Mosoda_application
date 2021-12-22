@@ -65,6 +65,8 @@ class MainActivity : AppCompatActivity() {
                 }
                 else{
                     //TODO: engedjen be az alkalmazasba
+                    val intent = Intent(this@MainActivity, HomePage::class.java)
+                    startActivity(intent)
                 }
             }
 

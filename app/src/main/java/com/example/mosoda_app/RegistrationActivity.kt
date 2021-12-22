@@ -11,6 +11,7 @@ import com.example.mosoda_app.entities.Profils
 import kotlinx.coroutines.launch
 
 class RegistrationActivity : AppCompatActivity() {
+    private var count = 0
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -35,8 +36,9 @@ class RegistrationActivity : AppCompatActivity() {
                     Toast.makeText(this, "The two passwords do not match", Toast.LENGTH_SHORT)
                         .show()
                 } else {
-                    val newProfil = Profils(id = 0, userName = username,
+                    val newProfil = Profils(id = count, userName = username,
                         password = passw1)
+                    count++
                     lifecycleScope.launch {
                         dao.insertProfile(newProfil)
                         //TODO: engedjen be az alkalmazasba
