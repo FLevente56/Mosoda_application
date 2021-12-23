@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1071474579291",
+    "project_id": "mosoda-app",
+    "storage_bucket": "mosoda-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071474579291:android:4db3b09de31e6a63d7ac7e",
+        "android_client_info": {
+          "package_name": "com.example.mosoda_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1071474579291-8mvgbdl3onju4298868mtpi2e8dif7a0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkugdi86FW5n9p9AYW2kTtlNkZHHnaSYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1071474579291-8mvgbdl3onju4298868mtpi2e8dif7a0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
