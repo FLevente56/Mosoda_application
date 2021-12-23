@@ -32,4 +32,8 @@ interface DAO {
     @Transaction
     @Query("SELECT * FROM profils WHERE userName = :username AND password = :password")
     suspend fun getProfile(username: String, password: String): List<Profils>
+
+    @Transaction
+    @Query("SELECT * FROM people")
+    suspend fun getAllPeople(): List<People>
 }
