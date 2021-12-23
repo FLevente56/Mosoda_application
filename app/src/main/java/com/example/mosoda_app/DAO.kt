@@ -3,6 +3,7 @@ package com.example.mosoda_app
 import android.text.Editable
 import androidx.room.*
 import com.example.mosoda_app.entities.*
+import java.util.*
 
 @Dao
 interface DAO {
@@ -36,4 +37,16 @@ interface DAO {
     @Transaction
     @Query("SELECT * FROM people")
     suspend fun getAllPeople(): List<People>
+
+    @Transaction
+    @Query("SELECT * FROM orders")
+    suspend fun getAllOrders(): List<Orders>
+
+    @Transaction
+    @Query("SELECT * FROM carpets")
+    suspend fun getAllCarpets(): List<Carpets>
+
+    @Transaction
+    @Query("UPDATE orders SET deliveryDate = :deliveryDate WHERE id = :id")
+    suspend fun updateDeliveryDate(id:  Int, deliveryDate: String)
 }

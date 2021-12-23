@@ -9,6 +9,7 @@ import com.example.mosoda_app.entities.People
 import kotlinx.coroutines.launch
 import android.widget.EditText
 import com.example.mosoda_app.entities.Carpets
+import com.example.mosoda_app.entities.Orders
 
 
 class AddCarpetActivity : AppCompatActivity() {
@@ -30,6 +31,7 @@ class AddCarpetActivity : AppCompatActivity() {
             val pick_up_date = findViewById<EditText>(R.id.pick_up_date).text.toString()
             val carpet = findViewById<EditText>(R.id.Carpet).text.toString()
             val size = findViewById<EditText>(R.id.carpet_size).text.toString()
+            val comment = findViewById<EditText>(R.id.comment).text.toString()
 
             if(name.isEmpty() || address.isEmpty() || phone.isEmpty() ||
                 pick_up_date.isEmpty() || carpet.isEmpty() || size.isEmpty()) {
@@ -41,12 +43,15 @@ class AddCarpetActivity : AppCompatActivity() {
                     val id = dao.getAllPeople().size + 1
                     val newPeople = People(id, name, address, phone)
                     dao.insertPeople(newPeople)
-                    dao.insertCarpet(Carpets(carpet, size.toFloat(), id))
+                    val newCarpet = Carpets(carpet, size.toFloat(), id)
+                    dao.insertCarpet(newCarpet)
                     allCarpets.zip(allCarpetsSize).forEach{ pair ->
-                        val newCarpet = Carpets(pair.component1().text.toString(),
+                        val newCarpet2 = Carpets(pair.component1().text.toString(),
                             pair.component2().text.toString().toFloat(), id)
-                        dao.insertCarpet(newCarpet)
+                        dao.insertCarpet(newCarpet2)
                     }
+                    val newOrder = Orders(id, pick_up_date, "", comment)
+                    dao.insertOrder(newOrder)
 
                     Toast.makeText(this@AddCarpetActivity, "Added with success", Toast.LENGTH_SHORT)
                         .show()

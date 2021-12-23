@@ -10,10 +10,16 @@ class HomePage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
 
-        var add_carpet_button = findViewById<Button>(R.id.add_carpet_button)
+        val add_carpet_button = findViewById<Button>(R.id.add_carpet_button)
+        val to_do_carpet = findViewById<Button>(R.id.to_do_carpet)
 
         add_carpet_button.setOnClickListener{
             val intent = Intent(this, AddCarpetActivity::class.java)
+            startActivity(intent)
+        }
+
+        to_do_carpet.setOnClickListener{
+            val intent = Intent(this, ToDoCarpetActivity::class.java)
             startActivity(intent)
         }
     }
