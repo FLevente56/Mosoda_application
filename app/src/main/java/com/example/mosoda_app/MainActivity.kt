@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this@MainActivity, "Wrong username or password", Toast.LENGTH_SHORT).show()
                 }
                 else{
-                    //TODO: engedjen be az alkalmazasba
+                    //engedjen be az alkalmazasba
                     val intent = Intent(this@MainActivity, HomePage::class.java)
                     startActivity(intent)
                 }

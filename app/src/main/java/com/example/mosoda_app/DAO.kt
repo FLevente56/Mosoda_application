@@ -31,12 +31,20 @@ interface DAO {
     suspend fun getOrders(id: Int): List<Orders>
 
     @Transaction
+    @Query("SELECT * FROM employees WHERE id = :id")
+    suspend fun getEmployee(id: Int): Employees
+
+    @Transaction
     @Query("SELECT * FROM profils WHERE userName = :username AND password = :password")
     suspend fun getProfile(username: String, password: String): List<Profils>
 
     @Transaction
     @Query("SELECT * FROM people")
     suspend fun getAllPeople(): List<People>
+
+    @Transaction
+    @Query("SELECT * FROM profils")
+    suspend fun getAllProfils(): List<Profils>
 
     @Transaction
     @Query("SELECT * FROM orders")

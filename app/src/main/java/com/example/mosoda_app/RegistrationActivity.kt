@@ -7,11 +7,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import com.example.mosoda_app.entities.Employees
 import com.example.mosoda_app.entities.Profils
 import kotlinx.coroutines.launch
 
 class RegistrationActivity : AppCompatActivity() {
-    private var count = 0
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -36,12 +36,16 @@ class RegistrationActivity : AppCompatActivity() {
                     Toast.makeText(this, "The two passwords do not match", Toast.LENGTH_SHORT)
                         .show()
                 } else {
-                    val newProfil = Profils(id = count, userName = username,
-                        password = passw1)
-                    count++
+
                     lifecycleScope.launch {
+                        val count = dao.getAllProfils().size + 1
+                        val newProfil = Profils(id = count, userName = username,
+                            password = passw1)
+
                         dao.insertProfile(newProfil)
-                        //TODO: engedjen be az alkalmazasba
+                        val newEmployee = Employees(count, count.toString(),"client")
+                        dao.insertEmployee(newEmployee)
+                        //engedjen be az alkalmazasba
                         val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
                         startActivity(intent)
                     }
