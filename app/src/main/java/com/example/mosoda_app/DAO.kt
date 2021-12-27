@@ -23,9 +23,16 @@ interface DAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertEmployee(employee: Employees)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertPrice(price: Price)
+
     @Transaction
     @Query("SELECT * FROM people WHERE id = :id")
     suspend fun getPeopleWithCarpets(id: Int): List<PeopleWithCarpets>
+
+    @Transaction
+    @Query("SELECT * FROM people")
+    suspend fun getAllPeopleWithCarpets(): List<PeopleWithCarpets>
 
     @Transaction
     @Query("SELECT * FROM carpets WHERE personId = :personId")
@@ -62,4 +69,16 @@ interface DAO {
     @Transaction
     @Query("UPDATE orders SET deliveryDate = :deliveryDate WHERE id = :id")
     suspend fun updateDeliveryDate(id:  Int, deliveryDate: String)
+
+    @Transaction
+    @Query("SELECT carpet_price FROM price")
+    suspend fun getPrice(): Float
+
+    @Transaction
+    @Query("UPDATE price SET carpet_price = :price")
+    suspend fun updatePrice(price: Float)
+
+    @Transaction
+    @Query("UPDATE carpets SET done = 'true' WHERE cod = :cod")
+    suspend fun updateCarpetDone(cod: String)
 }

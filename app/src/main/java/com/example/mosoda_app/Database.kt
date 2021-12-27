@@ -19,9 +19,10 @@ import java.util.*
         Employees :: class,
         Orders :: class,
         People :: class,
-        Profils :: class
+        Profils :: class,
+        Price :: class
     ],
-    version = 3,
+    version = 4,
     exportSchema = true
 )
 abstract class Database() : RoomDatabase() {
@@ -35,13 +36,18 @@ abstract class Database() : RoomDatabase() {
                 database.execSQL("ALTER TABLE carpets ADD COLUMN done TEXT NOT NULL DEFAULT 'false'")
             }
         }
+        val migration_3_4: Migration = object: Migration(3, 4){
+            override fun migrate(database: SupportSQLiteDatabase){
+                database.execSQL("CREATE TABLE price (carpet_price REAL PRIMARY KEY NOT NULL DEFAULT 7)")
+            }
+        }
         fun getInstance(context: Context): com.example.mosoda_app.Database {
             synchronized(this) {
                 return INSTANCE ?: Room.databaseBuilder(
                     context.applicationContext,
                     com.example.mosoda_app.Database::class.java,
                     "mosodapp"
-                ).addMigrations(migration_2_3).build().also {
+                ).addMigrations(migration_3_4).build().also {
                     INSTANCE = it
                 }
             }

@@ -25,13 +25,12 @@ class ToDoCarpetActivity : AppCompatActivity() {
             val orders = dao.getAllOrders()
             val carpets = dao.getAllCarpets()
 
-            for(o in orders) {
-                for(c in carpets) {
-                    if(c.personId == o.id && o.deliveryDate == ""){
-                        cods.add(c.cod)
-                    }
+            for(c in carpets) {
+                if(c.done == "false"){
+                    cods.add(c.cod)
                 }
             }
+
             val arrayAdapter: ArrayAdapter<String> = ArrayAdapter(this@ToDoCarpetActivity, android.R.layout.simple_list_item_1, cods)
             carpet_list.adapter = arrayAdapter
         }
@@ -55,6 +54,7 @@ class ToDoCarpetActivity : AppCompatActivity() {
                             }
                         }
                         dao.updateDeliveryDate(id, delivery_date)
+                        dao.updateCarpetDone(cods[i])
                         Toast.makeText(this@ToDoCarpetActivity, "Delivery date added with success", Toast.LENGTH_SHORT)
                             .show()
                         val intent = Intent(this@ToDoCarpetActivity, HomePage::class.java)
