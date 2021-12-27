@@ -61,9 +61,9 @@ class ToDoCarpetActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                 })
-            val b = dialogBuilder.create()
             dialogBuilder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which ->
                 dialog.cancel() })
+            val b = dialogBuilder.create()
             b.show()
         }
 

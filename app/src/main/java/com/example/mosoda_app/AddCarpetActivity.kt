@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 import android.widget.EditText
 import com.example.mosoda_app.entities.Carpets
 import com.example.mosoda_app.entities.Orders
+import com.example.mosoda_app.entities.relations.PeopleWithCarpets
 
 
 class AddCarpetActivity : AppCompatActivity() {
@@ -42,13 +43,17 @@ class AddCarpetActivity : AppCompatActivity() {
                 lifecycleScope.launch{
                     val id = dao.getAllPeople().size + 1
                     val newPeople = People(id, name, address, phone)
+
                     dao.insertPeople(newPeople)
-                    val newCarpet = Carpets(carpet, size.toFloat(), id)
+                    val newCarpet = Carpets(carpet, size.toFloat(), "false", id)
                     dao.insertCarpet(newCarpet)
+                    val carps: List<Carpets> = arrayListOf(newCarpet)
+
                     allCarpets.zip(allCarpetsSize).forEach{ pair ->
                         val newCarpet2 = Carpets(pair.component1().text.toString(),
-                            pair.component2().text.toString().toFloat(), id)
+                            pair.component2().text.toString().toFloat(),"false", id)
                         dao.insertCarpet(newCarpet2)
+                        carps.toMutableList().add(newCarpet2)
                     }
                     val newOrder = Orders(id, pick_up_date, "", comment)
                     dao.insertOrder(newOrder)

@@ -3,6 +3,7 @@ package com.example.mosoda_app
 import android.text.Editable
 import androidx.room.*
 import com.example.mosoda_app.entities.*
+import com.example.mosoda_app.entities.relations.PeopleWithCarpets
 import java.util.*
 
 @Dao
@@ -21,6 +22,10 @@ interface DAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertEmployee(employee: Employees)
+
+    @Transaction
+    @Query("SELECT * FROM people WHERE id = :id")
+    suspend fun getPeopleWithCarpets(id: Int): List<PeopleWithCarpets>
 
     @Transaction
     @Query("SELECT * FROM carpets WHERE personId = :personId")
