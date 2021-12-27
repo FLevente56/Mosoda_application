@@ -64,9 +64,14 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this@MainActivity, "Wrong username or password", Toast.LENGTH_SHORT).show()
                 }
                 else{
-                    //engedjen be az alkalmazasba
-                    val intent = Intent(this@MainActivity, HomePage::class.java)
-                    startActivity(intent)
+                    if(profil[0].rank == "admin"){
+                        val intent = Intent(this@MainActivity, HomePage::class.java)
+                        startActivity(intent)
+                    }
+                    else{
+                        //TODO: enegdjen be vendeg modba
+                    }
+
                 }
             }
 

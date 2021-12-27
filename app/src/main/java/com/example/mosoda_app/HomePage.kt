@@ -25,6 +25,8 @@ class HomePage : AppCompatActivity() {
         val to_do_carpet = findViewById<Button>(R.id.to_do_carpet)
         val del_button = findViewById<Button>(R.id.delivery_button)
         val set_price = findViewById<Button>(R.id.set_price)
+        val log_out = findViewById<Button>(R.id.log_out)
+        val history = findViewById<Button>(R.id.history)
 
         add_carpet_button.setOnClickListener{
             val intent = Intent(this, AddCarpetActivity::class.java)
@@ -67,6 +69,16 @@ class HomePage : AppCompatActivity() {
                 val b = dialogBuilder.create()
                 b.show()
             }
+        }
+
+        log_out.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        history.setOnClickListener {
+            val intent = Intent(this, HistoryActivity::class.java)
+            startActivity(intent)
         }
     }
 }

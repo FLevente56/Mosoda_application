@@ -40,7 +40,7 @@ class RegistrationActivity : AppCompatActivity() {
                     lifecycleScope.launch {
                         val count = dao.getAllProfils().size + 1
                         val newProfil = Profils(id = count, userName = username,
-                            password = passw1)
+                            password = passw1, "client")
 
                         dao.insertProfile(newProfil)
                         val newEmployee = Employees(count, count.toString(),"client")

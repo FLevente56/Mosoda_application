@@ -22,7 +22,7 @@ import java.util.*
         Profils :: class,
         Price :: class
     ],
-    version = 4,
+    version = 5,
     exportSchema = true
 )
 abstract class Database() : RoomDatabase() {
@@ -41,13 +41,18 @@ abstract class Database() : RoomDatabase() {
                 database.execSQL("CREATE TABLE price (carpet_price REAL PRIMARY KEY NOT NULL DEFAULT 7)")
             }
         }
+        val migration_4_5: Migration = object: Migration(4, 5){
+            override fun migrate(database: SupportSQLiteDatabase){
+                database.execSQL("ALTER TABLE profils ADD COLUMN rank TEXT NOT NULL DEFAULT 'client'")
+            }
+        }
         fun getInstance(context: Context): com.example.mosoda_app.Database {
             synchronized(this) {
                 return INSTANCE ?: Room.databaseBuilder(
                     context.applicationContext,
                     com.example.mosoda_app.Database::class.java,
                     "mosodapp"
-                ).addMigrations(migration_3_4).build().also {
+                ).addMigrations(migration_4_5).build().also {
                     INSTANCE = it
                 }
             }

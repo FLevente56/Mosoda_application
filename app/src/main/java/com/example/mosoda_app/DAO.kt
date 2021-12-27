@@ -4,6 +4,7 @@ import android.text.Editable
 import androidx.room.*
 import com.example.mosoda_app.entities.*
 import com.example.mosoda_app.entities.relations.PeopleWithCarpets
+import com.example.mosoda_app.entities.relations.PeopleWithOrders
 import java.util.*
 
 @Dao
@@ -29,6 +30,14 @@ interface DAO {
     @Transaction
     @Query("SELECT * FROM people WHERE id = :id")
     suspend fun getPeopleWithCarpets(id: Int): List<PeopleWithCarpets>
+
+    @Transaction
+    @Query("SELECT * FROM people")
+    suspend fun getPeopleWithOrders(): List<PeopleWithOrders>
+
+    @Transaction
+    @Query("SELECT * FROM people WHERE id = :id")
+    suspend fun getPeopleWithOrdersById(id: Int): PeopleWithOrders
 
     @Transaction
     @Query("SELECT * FROM people")

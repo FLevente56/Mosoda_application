@@ -8,5 +8,6 @@ data class Profils(
     @PrimaryKey(autoGenerate = false)
     val id: Int,
     val userName: String,
-    val password: String
+    val password: String,
+    val rank: String
 )
