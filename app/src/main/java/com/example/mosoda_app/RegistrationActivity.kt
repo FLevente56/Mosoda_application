@@ -45,8 +45,8 @@ class RegistrationActivity : AppCompatActivity() {
                         dao.insertProfile(newProfil)
                         val newEmployee = Employees(count, count.toString(),"client")
                         dao.insertEmployee(newEmployee)
-                        //engedjen be az alkalmazasba
-                        val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
+                        //adatok kitoltese
+                        val intent = Intent(this@RegistrationActivity, RegistrationWithDetails::class.java)
                         startActivity(intent)
                     }
                 }

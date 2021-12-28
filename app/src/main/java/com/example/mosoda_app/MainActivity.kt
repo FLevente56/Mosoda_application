@@ -69,7 +69,9 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                     else{
-                        //TODO: enegdjen be vendeg modba
+                        //enegdjen be vendeg modba
+                        val intent = Intent(this@MainActivity, GuestHomePage::class.java)
+                        startActivity(intent)
                     }
 
                 }
