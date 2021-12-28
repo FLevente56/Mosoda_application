@@ -1,5 +1,6 @@
 package com.example.mosoda_app
 
+import android.app.Application
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -12,6 +13,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
+    //usernamebol ez csinal globalis valtozot
+    class UserName() : Application() {
+        var USERNAME = ""
+        fun setUserName(username: String){
+            USERNAME = username
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -70,6 +78,8 @@ class MainActivity : AppCompatActivity() {
                     }
                     else{
                         //enegdjen be vendeg modba
+                        val u = UserName()
+                        u.setUserName(userName)
                         val intent = Intent(this@MainActivity, GuestHomePage::class.java)
                         startActivity(intent)
                     }

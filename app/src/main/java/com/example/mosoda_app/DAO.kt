@@ -90,4 +90,8 @@ interface DAO {
     @Transaction
     @Query("UPDATE carpets SET done = 'true' WHERE cod = :cod")
     suspend fun updateCarpetDone(cod: String)
+
+    @Transaction
+    @Query("SELECT id from people WHERE name = :name")
+    suspend fun getPeopleId(name: String): Int
 }

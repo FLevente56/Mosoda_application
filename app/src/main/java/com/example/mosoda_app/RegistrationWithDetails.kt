@@ -29,7 +29,7 @@ class RegistrationWithDetails : AppCompatActivity() {
             }
             else{
                 lifecycleScope.launch {
-                    val newPeople = People(dao.getAllPeople().size+1, name, address, phone)
+                    val newPeople = People(dao.getAllPeople().size + 1, name, address, phone)
                     dao.insertPeople(newPeople)
                     val intent = Intent(this@RegistrationWithDetails, GuestHomePage::class.java)
                     startActivity(intent)

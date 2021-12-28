@@ -38,7 +38,7 @@ class RegistrationActivity : AppCompatActivity() {
                 } else {
 
                     lifecycleScope.launch {
-                        val count = dao.getAllProfils().size + 1
+                        val count = dao.getAllPeople().size + 1
                         val newProfil = Profils(id = count, userName = username,
                             password = passw1, "client")
 
