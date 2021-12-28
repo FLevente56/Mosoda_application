@@ -19,10 +19,10 @@ class GuestHomePage : AppCompatActivity() {
             startActivity(intent)
         }
 
-        /*add_order.setOnClickListener {
-            val intent = Intent(this, MyOrdersActivity::class.java)
+        add_order.setOnClickListener {
+            val intent = Intent(this, AddOrder::class.java)
             startActivity(intent)
-        }*/
+        }
 
         my_orders_btn.setOnClickListener {
             val intent = Intent(this, MyOrdersActivity::class.java)

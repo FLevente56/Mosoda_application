@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.lifecycle.lifecycleScope
+import com.example.mosoda_app.MainActivity.UserName.Companion.USERNAME
 import kotlinx.coroutines.launch
 
 class MyOrdersActivity : AppCompatActivity() {
@@ -15,16 +16,20 @@ class MyOrdersActivity : AppCompatActivity() {
         val dao = Database.getInstance(this).dao
         val orders = findViewById<ListView>(R.id.orders)
         val orders_list = mutableListOf<String>()
-        //globalis username
-        val userName = MainActivity.UserName().USERNAME
+
         lifecycleScope.launch {
-            val id = dao.getPeopleId(userName)
+            val id = dao.getPeopleId(USERNAME)
             val o = dao.getOrders(id)
+            val carps = dao.getCarpets(id)
+            var total_price = 0.0
+            carps.forEach { total_price += it.size * dao.getPrice()}
             var info = ""
             o.forEach {
-                info = it.pickUpDate + "\n" + it.deliveryDate + "\n"
+                info = "Pick-up: " + it.pickUpDate + "\nDelivery: " + it.deliveryDate + "\nPrice: " +
+                        total_price + "\n"
                 orders_list.add(info)
             }
+
             val arrayAdapter: ArrayAdapter<String> = ArrayAdapter(this@MyOrdersActivity, android.R.layout.simple_list_item_1, orders_list)
             orders.adapter = arrayAdapter
         }

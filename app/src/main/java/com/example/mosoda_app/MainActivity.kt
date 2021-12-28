@@ -9,15 +9,19 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.example.mosoda_app.MainActivity.UserName.Companion.USERNAME
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     //usernamebol ez csinal globalis valtozot
     class UserName() : Application() {
-        var USERNAME = ""
-        fun setUserName(username: String){
-            USERNAME = username
+        companion object{
+            var USERNAME = ""
+        }
+
+        override fun onCreate() {
+            super.onCreate()
         }
     }
 
@@ -78,8 +82,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     else{
                         //enegdjen be vendeg modba
-                        val u = UserName()
-                        u.setUserName(userName)
+                        USERNAME = userName
                         val intent = Intent(this@MainActivity, GuestHomePage::class.java)
                         startActivity(intent)
                     }
