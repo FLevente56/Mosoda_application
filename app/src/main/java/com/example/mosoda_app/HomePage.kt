@@ -18,15 +18,13 @@ class HomePage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
 
-        var price: Float
-        price = 7F
-
         val add_carpet_button = findViewById<Button>(R.id.add_carpet_button)
         val to_do_carpet = findViewById<Button>(R.id.to_do_carpet)
         val del_button = findViewById<Button>(R.id.delivery_button)
         val set_price = findViewById<Button>(R.id.set_price)
         val log_out = findViewById<Button>(R.id.log_out)
         val history = findViewById<Button>(R.id.history)
+        val incoming_orders = findViewById<Button>(R.id.incoming_orders)
 
         add_carpet_button.setOnClickListener{
             val intent = Intent(this, AddCarpetActivity::class.java)
@@ -44,6 +42,8 @@ class HomePage : AppCompatActivity() {
         }
 
         set_price.setOnClickListener {
+            var price: Float
+            price = 7F
             lifecycleScope.launch {
                 val dao = Database.getInstance(this@HomePage).dao
                 //dao.insertPrice(Price(price))
@@ -78,6 +78,11 @@ class HomePage : AppCompatActivity() {
 
         history.setOnClickListener {
             val intent = Intent(this, HistoryActivity::class.java)
+            startActivity(intent)
+        }
+
+        incoming_orders.setOnClickListener {
+            val intent = Intent(this, IncomingOrders::class.java)
             startActivity(intent)
         }
     }

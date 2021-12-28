@@ -19,10 +19,9 @@ class ToDoCarpetActivity : AppCompatActivity() {
         setContentView(R.layout.activity_to_do_carpet)
 
         val dao = Database.getInstance(this).dao
-        val carpet_list = findViewById<ListView>(R.id.carpet_list)
+        val carpetList = findViewById<ListView>(R.id.carpet_list)
         val cods = mutableListOf<String>()
         lifecycleScope.launch{
-            val orders = dao.getAllOrders()
             val carpets = dao.getAllCarpets()
 
             for(c in carpets) {
@@ -32,10 +31,10 @@ class ToDoCarpetActivity : AppCompatActivity() {
             }
 
             val arrayAdapter: ArrayAdapter<String> = ArrayAdapter(this@ToDoCarpetActivity, android.R.layout.simple_list_item_1, cods)
-            carpet_list.adapter = arrayAdapter
+            carpetList.adapter = arrayAdapter
         }
 
-        carpet_list.setOnItemClickListener {  adapterview, view, i, l ->
+        carpetList.setOnItemClickListener { adapterview, view, i, l ->
             val dialogBuilder = AlertDialog.Builder(this)
             val input = EditText(this)
             dialogBuilder.setMessage("Set the delivery date for carpet")
@@ -44,7 +43,7 @@ class ToDoCarpetActivity : AppCompatActivity() {
             dialogBuilder.setView(input)
             dialogBuilder.setPositiveButton("Done",
                 DialogInterface.OnClickListener { dialog, whichButton ->
-                    val delivery_date = input.text.toString()
+                    val deliveryDate = input.text.toString()
                     var id = -1
                     lifecycleScope.launch{
                         val carp = dao.getAllCarpets()
@@ -53,7 +52,7 @@ class ToDoCarpetActivity : AppCompatActivity() {
                                 id = c.personId
                             }
                         }
-                        dao.updateDeliveryDate(id, delivery_date)
+                        dao.updateDeliveryDate(id, deliveryDate)
                         dao.updateCarpetDone(cods[i])
                         Toast.makeText(this@ToDoCarpetActivity, "Delivery date added with success", Toast.LENGTH_SHORT)
                             .show()

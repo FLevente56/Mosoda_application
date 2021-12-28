@@ -94,4 +94,12 @@ interface DAO {
     @Transaction
     @Query("SELECT id from people WHERE name = :name")
     suspend fun getPeopleId(name: String): Int
+
+    @Transaction
+    @Query("SELECT * FROM people WHERE id = :id")
+    suspend fun getPeopleById(id: Int): People
+
+    @Transaction
+    @Query("UPDATE orders SET pickUpDate = :pickUpDate WHERE id = :id")
+    suspend fun updatePickUpDate(id: Int, pickUpDate: String)
 }
