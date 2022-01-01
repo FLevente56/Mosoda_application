@@ -7,13 +7,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
+        android:id="@+id/regist_lay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/back_login_button"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view_registration"
         android:gravity="center"
         android:theme="@style/Theme.AppCompat"
         >
@@ -23,7 +24,7 @@
             android:layout_height="wrap_content"
             android:hint="Username"
             android:layout_gravity="top"
-            />
+            android:inputType="text"/>
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/reg_password1"
             android:layout_width="wrap_content"
@@ -45,21 +46,39 @@
             android:inputType="textPassword"
             />
     </LinearLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/back_login_button"
-        android:layout_width="40pt"
-        android:layout_height="40pt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:text="BACK"
-        />
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/to_registrate_button"
-        android:layout_width="50pt"
-        android:layout_height="40pt"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation_view_registration"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:text="Sign up"
-        />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="horizontal"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/back_to_login_button"
+            android:layout_width="40pt"
+            android:layout_height="20pt"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_gravity="left"
+            android:text="BACK"
+            android:drawableLeft="@drawable/arrow_back"
+            android:background="@drawable/round_corner_button"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/to_registrate_button"
+            android:layout_width="55pt"
+            android:layout_height="20pt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_gravity="right"
+            android:text="Sign up"
+            android:drawableLeft="@drawable/register"
+            android:background="@drawable/round_corner_button"
+            />
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 </androidx.constraintlayout.widget.ConstraintLayout>

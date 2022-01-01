@@ -29,17 +29,17 @@ class MainActivity : AppCompatActivity() {
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_layout)
-        var username = findViewById<EditText>(R.id.username)
-        var password = findViewById<EditText>(R.id.password)
-        var button_login = findViewById<Button>(R.id.attempt_login_button)
-        var button_sign_up = findViewById<Button>(R.id.to_registrate_button)
+        val username = findViewById<EditText>(R.id.username)
+        val password = findViewById<EditText>(R.id.password)
+
+        val button_login = findViewById<Button>(R.id.attempt_login_button)
+        val button_sign_up = findViewById<Button>(R.id.to_registrate_button)
 
         //adatbazis
         val dao = Database.getInstance(this).dao
         val bottnav: BottomNavigationView = findViewById(R.id.bottom_navigation_view_login);
-        bottnav.setOnItemSelectedListener() {
+        /*bottnav.setOnItemSelectedListener() {
             when(it.itemId) {
-                //TODO: fragmentek megval
                 R.id.back_login_button -> { // Ez nem tudom meg mit csinaljon valszeg lepjen ki az App-bol
                     //replaceFragment()
                     return@setOnItemSelectedListener true
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             false
-        }
+        }*/
 
         button_login.setOnClickListener{
             val userName = username.text.toString()
@@ -100,7 +100,6 @@ class MainActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment) {
         if (fragment != null) {
             val transaction = supportFragmentManager.beginTransaction()
-            //TODO: fragment struktura
             //transaction.replace(R.id., fragment)
             transaction.commit()
         }
@@ -109,7 +108,6 @@ class MainActivity : AppCompatActivity() {
     {
         if (fragment != null) {
             val childTransaction = supportFragmentManager.beginTransaction()
-            //TODO: fragment struktura -ez nem 100% fog kelleni, meglatom meg
             //childTransaction.replace(R.id., fragment)
             childTransaction.commit()
         }

@@ -22,7 +22,6 @@
             android:layout_height="wrap_content"
             android:hint="Username"
             android:layout_gravity="top"
-            android:inputType="text"
 
             />
         <com.google.android.material.textfield.TextInputEditText
@@ -46,24 +45,30 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/back_login_button"
             android:layout_width="40pt"
-            android:layout_height="40pt"
+            android:layout_height="20pt"
             android:text="BACK"
             android:layout_gravity="left"
+            android:drawableLeft="@drawable/arrow_back"
+            android:background="@drawable/round_corner_button"
             />
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/attempt_login_button"
             android:layout_width="40pt"
-            android:layout_height="40pt"
-            android:layout_gravity="center"
+            android:layout_height="20pt"
+            android:layout_gravity="center_horizontal"
             android:text="LOG IN"
+            android:drawableLeft="@drawable/log_in"
+            android:background="@drawable/round_corner_button"
             />
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/to_registrate_button"
-            android:layout_width="50pt"
-            android:layout_height="40pt"
+            android:layout_width="40pt"
+            android:layout_height="20pt"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_gravity="right"
             android:text="Sign up"
+            android:drawableLeft="@drawable/register"
+            android:background="@drawable/round_corner_button"
             />
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,7 +23,12 @@ class RegistrationActivity : AppCompatActivity() {
         var reg_button = findViewById<Button>(R.id.to_registrate_button)
 
         val dao = Database.getInstance(this).dao
+        val button_back_tologin = findViewById<Button>(R.id.back_to_login_button)
 
+        button_back_tologin.setOnClickListener{
+            val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
         reg_button.setOnClickListener {
             val passw1 = password1.text.toString()
             val passw2 = password2.text.toString()
