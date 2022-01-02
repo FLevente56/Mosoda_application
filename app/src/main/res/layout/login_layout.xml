@@ -25,6 +25,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Username"
+            android:textColorHint="#283747"
+            android:textColor="#283747"
             android:layout_gravity="top"
             android:background="@drawable/round_edit_textbox"
             android:padding="12dp"
@@ -34,10 +36,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Password"
+            android:textColorHint="#283747"
+            android:textColor="#283747"
             android:layout_gravity="bottom"
             android:inputType="textPassword"
             android:background="@drawable/round_edit_textbox"
             android:padding="12dp"
+            android:layout_marginTop="10dp"
             />
     </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -50,24 +55,16 @@
         android:orientation="horizontal"
         android:background="@color/deep_purple"
         >
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/back_login_button"
-            android:layout_width="40pt"
-            android:layout_height="20pt"
-            android:text="BACK"
-            android:layout_gravity="left"
-            android:drawableLeft="@drawable/arrow_back"
-            android:background="@drawable/round_corner_button"
-            />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/attempt_login_button"
             android:layout_width="40pt"
             android:layout_height="20pt"
-            android:layout_gravity="center_horizontal"
-            android:text="LOG IN"
-            android:drawableLeft="@drawable/log_in"
+            android:layout_gravity="left"
             android:background="@drawable/round_corner_button"
-            />
+            android:drawableLeft="@drawable/log_in"
+            android:text="LOG IN" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/to_registrate_button"
             android:layout_width="40pt"

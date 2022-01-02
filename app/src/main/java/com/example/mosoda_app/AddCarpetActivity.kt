@@ -1,6 +1,8 @@
 package com.example.mosoda_app
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
@@ -10,7 +12,6 @@ import kotlinx.coroutines.launch
 import android.widget.EditText
 import com.example.mosoda_app.entities.Carpets
 import com.example.mosoda_app.entities.Orders
-import com.example.mosoda_app.entities.relations.PeopleWithCarpets
 
 
 class AddCarpetActivity : AppCompatActivity() {
@@ -75,6 +76,13 @@ class AddCarpetActivity : AppCompatActivity() {
 
             dynamicTextview.hint = "Carpet"
             dynamicTextview2.hint = "Size"
+            dynamicTextview.setBackgroundColor(Color.parseColor("#AED6F1"))
+            dynamicTextview2.setBackgroundColor(Color.parseColor("#AED6F1"))
+            dynamicTextview.setHintTextColor(Color.parseColor("#283747"))
+            dynamicTextview2.setHintTextColor(Color.parseColor("#283747"))
+            dynamicTextview.setTextColor(Color.parseColor("#283747"))
+            dynamicTextview2.setTextColor(Color.parseColor("#283747"))
+
 
             allCarpets.add(dynamicTextview)
             allCarpetsSize.add(dynamicTextview2)

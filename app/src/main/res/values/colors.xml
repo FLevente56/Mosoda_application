@@ -9,8 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="button_color_1">#52BE80</color>
     <color name="purple">#8E44AD</color>
-    <color name="deep_purple">#7D3C98</color>
+    <color name="deep_purple">#2980B9</color>
     <color name="light_purple">#AF7AC5</color>
-    <color name="background_purple">#C39BD3</color>
-    <color name="dark_purple">#512E5F</color>
+    <color name="background_purple">#85C1E9</color>
+    <color name="dark_purple">#1F618D</color>
 </resources>
