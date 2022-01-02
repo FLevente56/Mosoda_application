@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrationWithDetails">
+    tools:context=".RegistrationWithDetails"
+    android:background="@color/background_purple"
+    >
 
     <EditText
         android:id="@+id/person_name"
@@ -20,7 +22,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/round_edit_textbox"
+        />
 
     <EditText
         android:id="@+id/address"
@@ -35,7 +39,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/person_name" />
+        app:layout_constraintTop_toBottomOf="@+id/person_name"
+        android:background="@drawable/round_edit_textbox"
+        />
 
     <EditText
         android:id="@+id/phone"
@@ -51,7 +57,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/address" />
+        app:layout_constraintTop_toBottomOf="@+id/address"
+        android:background="@drawable/round_edit_textbox"
+        />
 
     <Button
         android:id="@+id/done"
@@ -62,5 +70,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone" />
+        app:layout_constraintTop_toBottomOf="@+id/phone"
+        android:background="@drawable/round_corner_button"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

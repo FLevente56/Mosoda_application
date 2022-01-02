@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
+    android:layout_height="match_parent"
+    android:background="@color/background_purple"
+    >
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="0dp"
@@ -16,7 +16,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@color/deep_purple"
+        android:padding="7dp"
+        >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -34,7 +37,9 @@
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/round_edit_textbox"
+                />
 
             <EditText
                 android:id="@+id/address"
@@ -47,7 +52,9 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="@+id/name"
-                app:layout_constraintTop_toBottomOf="@+id/name" />
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                android:background="@drawable/round_edit_textbox"
+                />
 
             <EditText
                 android:id="@+id/phone"
@@ -60,7 +67,9 @@
                 android:inputType="phone"
                 android:minHeight="48dp"
                 app:layout_constraintStart_toStartOf="@+id/address"
-                app:layout_constraintTop_toBottomOf="@+id/address" />
+                app:layout_constraintTop_toBottomOf="@+id/address"
+                android:background="@drawable/round_edit_textbox"
+                />
 
             <EditText
                 android:id="@+id/pick_up_date"
@@ -73,7 +82,9 @@
                 android:inputType="date"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="@+id/phone"
-                app:layout_constraintTop_toBottomOf="@+id/phone" />
+                app:layout_constraintTop_toBottomOf="@+id/phone"
+                android:background="@drawable/round_edit_textbox"
+                />
 
             <EditText
                 android:id="@+id/comment"
@@ -86,7 +97,9 @@
                 android:inputType="text"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="@+id/pick_up_date"
-                app:layout_constraintTop_toBottomOf="@+id/pick_up_date" />
+                app:layout_constraintTop_toBottomOf="@+id/pick_up_date"
+                android:background="@drawable/round_edit_textbox"
+                />
 
             <EditText
                 android:id="@+id/Carpet"
@@ -99,7 +112,9 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 app:layout_constraintStart_toStartOf="@+id/pick_up_date"
-                app:layout_constraintTop_toBottomOf="@+id/pick_up_date" />
+                app:layout_constraintTop_toBottomOf="@+id/pick_up_date"
+                android:background="@drawable/round_edit_textbox"
+                />
 
             <EditText
                 android:id="@+id/carpet_size"
@@ -112,7 +127,9 @@
                 android:inputType="number"
                 android:minHeight="48dp"
                 app:layout_constraintStart_toStartOf="@+id/Carpet"
-                app:layout_constraintTop_toBottomOf="@+id/Carpet" />
+                app:layout_constraintTop_toBottomOf="@+id/Carpet"
+                android:background="@drawable/round_edit_textbox"
+                />
 
             <LinearLayout
                 android:id="@+id/linearLayout"
@@ -132,13 +149,19 @@
                 android:layout_height="wrap_content"
                 android:text="Add carpet"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/round_corner_button"
+                android:drawableBottom="@drawable/add"
+                />
 
             <Button
                 android:id="@+id/done_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Done" />
+                android:text="Done"
+                android:background="@drawable/round_corner_button"
+                android:layout_marginTop="7dp"
+                />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

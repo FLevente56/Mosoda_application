@@ -42,6 +42,7 @@
         >
     </androidx.constraintlayout.widget.ConstraintLayout>
         <TextView
+            android:id="@+id/text_welcome_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/top_navigation"
@@ -52,6 +53,19 @@
             android:padding="20dp"
             android:background="@drawable/round_textview"
             />
+        <Button
+            android:id="@+id/tologin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="LOG IN"
+            android:drawableLeft="@drawable/log_in"
+            android:background="@drawable/round_corner_button"
+            app:layout_constraintTop_toBottomOf="@id/text_welcome_main"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
@@ -82,8 +96,9 @@
             android:layout_width="30pt"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:text="b3"
+            android:text="Log Out"
             android:background="@drawable/round_corner_button"
+            android:drawableLeft="@drawable/logout"
             />
     </com.google.android.material.bottomnavigation.BottomNavigationView>
     </androidx.constraintlayout.widget.ConstraintLayout>

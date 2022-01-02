@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomePage">
+    tools:context=".HomePage"
+    android:background="@color/background_purple">
 
     <Button
         android:id="@+id/add_carpet_button"
@@ -15,7 +16,10 @@
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/round_corner_button"
+        android:padding="12dp"
+        />
 
     <Button
         android:id="@+id/to_do_carpet"
@@ -25,7 +29,10 @@
         android:layout_marginTop="140dp"
         android:text="To-Do carpet"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/round_corner_button"
+        android:padding="12dp"
+        />
 
     <Button
         android:id="@+id/delivery_button"
@@ -35,7 +42,10 @@
         android:layout_marginEnd="62dp"
         android:text="Done"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/round_corner_button"
+        android:padding="12dp"
+        />
 
     <Button
         android:id="@+id/set_price"
@@ -45,7 +55,10 @@
         android:layout_marginBottom="340dp"
         android:text="Set price"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/round_corner_button"
+        android:padding="12dp"
+        />
 
     <Button
         android:id="@+id/log_out"
@@ -55,7 +68,11 @@
         android:text="Log out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/round_corner_button"
+        android:padding="12dp"
+        android:drawableLeft="@drawable/logout"
+        />
 
     <Button
         android:id="@+id/history"
@@ -67,7 +84,10 @@
         android:text="History"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/set_price" />
+        app:layout_constraintTop_toTopOf="@+id/set_price"
+        android:background="@drawable/round_corner_button"
+        android:padding="12dp"
+        />
 
     <Button
         android:id="@+id/incoming_orders"
@@ -79,6 +99,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/delivery_button"
         app:layout_constraintStart_toStartOf="@+id/delivery_button"
-        app:layout_constraintTop_toTopOf="@+id/add_carpet_button" />
+        app:layout_constraintTop_toTopOf="@+id/add_carpet_button"
+        android:background="@drawable/round_corner_button"
+        android:padding="12dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
