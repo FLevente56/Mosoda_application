@@ -5,18 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bejelntekezes_panel"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background_purple"
+    >
     <LinearLayout
         android:id="@+id/regist_lay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view_registration"
-        android:gravity="center"
         android:theme="@style/Theme.AppCompat"
+        android:background="@drawable/round_edit_text"
+        android:padding="12dp"
+
         >
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/username"
@@ -24,16 +29,21 @@
             android:layout_height="wrap_content"
             android:hint="Username"
             android:layout_gravity="top"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:background="@drawable/round_edit_textbox"
+            android:padding="12dp"
+            android:gravity="center_horizontal"
+            />
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/reg_password1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Password"
             android:layout_gravity="bottom"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:inputType="textPassword"
+            android:background="@drawable/round_edit_textbox"
+            android:padding="12dp"
+
             />
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/reg_password2"
@@ -41,9 +51,9 @@
             android:layout_height="wrap_content"
             android:hint="Repeat password"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:inputType="textPassword"
+            android:background="@drawable/round_edit_textbox"
+            android:padding="12dp"
             />
     </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -54,6 +64,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:orientation="horizontal"
+        android:background="@color/deep_purple"
         >
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/back_to_login_button"
