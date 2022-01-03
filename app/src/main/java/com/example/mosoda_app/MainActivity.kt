@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         companion object{
             var USERNAME = ""
         }
-
         override fun onCreate() {
             super.onCreate()
         }
@@ -67,21 +66,6 @@ class MainActivity : AppCompatActivity() {
         button_sign_up.setOnClickListener{
             val intent = Intent(this, RegistrationActivity::class.java)
             startActivity(intent)
-        }
-    }
-    private fun replaceFragment(fragment: Fragment) {
-        if (fragment != null) {
-            val transaction = supportFragmentManager.beginTransaction()
-            //transaction.replace(R.id., fragment)
-            transaction.commit()
-        }
-    }
-    private fun replaceChild(fragment: Fragment)
-    {
-        if (fragment != null) {
-            val childTransaction = supportFragmentManager.beginTransaction()
-            //childTransaction.replace(R.id., fragment)
-            childTransaction.commit()
         }
     }
     

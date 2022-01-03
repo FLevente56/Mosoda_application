@@ -83,7 +83,6 @@ class AddCarpetActivity : AppCompatActivity() {
             dynamicTextview.setTextColor(Color.parseColor("#283747"))
             dynamicTextview2.setTextColor(Color.parseColor("#283747"))
 
-
             allCarpets.add(dynamicTextview)
             allCarpetsSize.add(dynamicTextview2)
             // add TextView to LinearLayout
