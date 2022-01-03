@@ -14,7 +14,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-    //usernamebol ez csinal globalis valtozot
     class UserName() : Application() {
         companion object{
             var USERNAME = ""
@@ -31,39 +30,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.login_layout)
         val username = findViewById<EditText>(R.id.username)
         val password = findViewById<EditText>(R.id.password)
-
         val button_login = findViewById<Button>(R.id.attempt_login_button)
         val button_sign_up = findViewById<Button>(R.id.to_registrate_button)
 
         //adatbazis
         val dao = Database.getInstance(this).dao
-        val bottnav: BottomNavigationView = findViewById(R.id.bottom_navigation_view_login);
-        /*bottnav.setOnItemSelectedListener() {
-            when(it.itemId) {
-                R.id.back_login_button -> { // Ez nem tudom meg mit csinaljon valszeg lepjen ki az App-bol
-                    //replaceFragment()
-                    return@setOnItemSelectedListener true
-                }
-                //TODO: fragmentek megval
-                R.id.attempt_login_button -> { /*TODO: attempt_login()-fuggv ez vissza kell teritsen egy True-t h sikerult-e a belepes
-                                                 ha igen akkor pedig atkuld a rendes kezdokepernyore*/
-                    val sikeres :Boolean=true;
-                    // sikeres=attempt_login(); //-vlm ilyesmi
-                    if(sikeres)
-                    {
-                        //replaceFragment()
-                        return@setOnItemSelectedListener true
-                    }
-                }
-                //TODO: fragmentek megval
-                R.id.to_registrate_button -> { /*TODO : atkuld a registration_layoutra es ott hasonloan fog viselkedni registrate()-fugv felvesz az adatbazisba
-                                                 ha sikeres akkor pedig visszakuld erre a kepernyore h jelentkezz be */
-                    //replaceFragment()
-                    return@setOnItemSelectedListener true
-                }
-            }
-            false
-        }*/
+
 
         button_login.setOnClickListener{
             val userName = username.text.toString()

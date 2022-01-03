@@ -20,6 +20,7 @@
         android:background="@drawable/round_edit_text"
         android:padding="12dp"
         >
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/username"
             android:layout_width="wrap_content"

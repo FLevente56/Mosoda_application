@@ -48,7 +48,7 @@
             app:layout_constraintTop_toBottomOf="@id/top_navigation"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:text="Üdvözöljük a kedves vendég kérjük jelentkezzen be, hogy teljes mértékben tudja használni az alkalmazásunkat"
+            android:text="Üdvözöljük kedves felhasznalo! Kérjük jelentkezzen be, hogy teljes mértékben tudja használni az alkalmazásunkat"
             android:textSize="24dp"
             android:padding="20dp"
             android:background="@drawable/round_textview"
